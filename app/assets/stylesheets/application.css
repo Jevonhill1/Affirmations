@@ -17,5 +17,6 @@
 
  body {
  background-image: url(space.jpg);
- color: white;
+ color: white !important;
+ text-decoration: none;
  }
