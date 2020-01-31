@@ -1,16 +1,13 @@
-<h1>Listing Affirmations</h1>
+<h1>Affirmations</h1>
  
-<table>
-  <tr>
-    <th>Text</th>
-    <th></th>
-  </tr>
- 
+
+
+<table> 
   <% @affirmations.each do |affirmation| %>
     <tr>
       <td><%= affirmation.text %></td>
-      <td><%= link_to 'Show', affirmation_path(affirmation) %></td>
-      <td><%= link_to 'New affirmation', new_affirmation_path %></td>
+      <td><button><%= link_to 'New', affirmation_new_path %></button></td>
+      <td><%= link_to 'Show', affirmation_show_path %></td>
     </tr>
   <% end %>
 </table>

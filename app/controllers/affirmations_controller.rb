@@ -7,20 +7,26 @@ class AffirmationsController < ApplicationController
     @affirmation = Affirmation.find(params[:id])
   end
  
-
   def new
     @affirmation = Affirmation.new
   end
+
+  def create
+    #render plain: params[:article].inspect
+    @affirmation = Affirmation.new(Affirmation_params)
+    @affirmation.save
+    redirect_to affirmation_show(@affirmation)
+
 
   def edit
     @affirmation = Affirmation.find(params[:id])
   end
   
-  #if @affirmation.save
-  #  redirect_to @affirmation
-  #else
-  #  render 'new'
-  #end
+  if @affirmation.save
+    redirect_to @affirmation
+  else
+    render 'new'
+  end
 end
  
 def update
@@ -37,6 +43,6 @@ private
   def affirmation_params
     params.require(:affirmation).permit(:text)
   end
-#end
+end
 
 

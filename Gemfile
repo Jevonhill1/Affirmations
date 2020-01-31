@@ -3,6 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'soundcloud', '~> 0.3.4'
+gem "react_on_rails", "11.1.4"
+gem 'google-api-client', '>0.7'
+gem 'soundcloud', '~> 0.3.4'
+gem 'font-awesome-rails'
+gem 'devise'
+gem 'dotenv-rails'
+gem 'faraday'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use postgresql as the database for Active Record
