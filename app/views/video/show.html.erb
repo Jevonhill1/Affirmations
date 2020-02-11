@@ -1,3 +1,36 @@
 <h1>Video</h1>
 
 <%= render :partial => 'video/youtube' %>
+<p id="notice"></p>
+<%= video.title %>
+<link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
+
+<script src="https://vjs.zencdn.net/ie8/ie8-version/video.js-ie8.min.js"><script>
+
+<p>
+    <strong>Title:</strong>
+    <%= video.title %>
+</p>
+<div style="width:400px; height:400px;">
+<%= image_tag(@video.thumbnail, style: 'width:100%;height:auto') %>
+</div>
+
+<div style="width:400px; height:400px;">
+<%= video_tag(url_for @video.clip, style: 'width:100%;height:auto', controls: " " ) %>
+</div>
+
+<video id="my-video" class="video-js" controls preload=
+"auto" width="640" height="264" poster="<%= url_for(@video.thumbnail) %>"
+data-setup="{}">
+<source src="<%= url_for(@video.clip) %>"" type="video/mp4" />
+</video>
+
+<p>
+<strong>Description:</strong>
+<%= @video.description %>
+</p>
+
+<%= link_to "Back", video_index_path %>
+<%= link_to "Home", affirmations_index_path %>
+
+<script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
